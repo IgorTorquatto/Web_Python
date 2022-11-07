@@ -1,0 +1,4 @@
+Rodam no navegador:
+Estáticas -> html, css , Javascript
+Rodam no servidor:
+Dinâmicas -> Python ,Java , Ruby , Php ,c#

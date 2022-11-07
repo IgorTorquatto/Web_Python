@@ -1,0 +1,6 @@
+Ida:
+You -> Browser -> Url -> Views -> Models -> Database
+Return:
+Database -> Models -> Views  ->Templates -> browser -> You
+
+Models - template - Views (MTV)

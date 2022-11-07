@@ -1,0 +1,5 @@
+Verbos:
+Get -> Buscar recursos
+Post -> Criar um novo recurso
+Put/Patch -> Atualizar um recurso existente
+Delete -> Remover um recurso

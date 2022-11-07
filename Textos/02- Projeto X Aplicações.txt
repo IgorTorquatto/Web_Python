@@ -1,0 +1,11 @@
+Em um projeto Django podemos ter várias aplicações, cada uma com sua tarefa específica, e estas aplicações depois de criadas podem ser utilizadas por outros projetos.
+
+Comando:                        Exemplo:
+
+django-admin startproject       -> Django1
+django-admin startapp           ->core
+
+-Podemos ter várias aplicações.
+
+
+Exemplo em um *projeto* E-commerce podemos ter várias *aplicações* como : clientes, carrinho, cupons, pagamentos, entrega, produtos

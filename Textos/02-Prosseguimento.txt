@@ -1,0 +1,25 @@
+Na pasta migrations criamos histórico para o banco de dados.
+Quando criamos nosso app, devemos ir na pasta do *projeto* , em settings, e adicionar seu nome em INSTALLED APPPS.
+Ainda no projeto, em  TEMPLATES devemos adicionar no array DIR o nome 'templates' que será um arquivo criado no nosso app posteriormente
+
+Nos "templates" que colocamos nos settings do projeto , mais especificamente em DIRS dentro dos TEMPLATES, o arquivo "templates" será criado dentro da nossa aplicação e nele que teremos o html da página
+
+Temos que dar os comandos no mesmo diretório que está o arquivo "manage.py" , que é o diretório do nosso projeto.
+Logo, para rodar o servidor damos o comando:
+python manage.py runserver
+
+Para parar o servidor - > Control + C
+
+Lembrar de mudar o Debug , em settings para False
+E mudar o ALLOWED HOSTS para ['*'] para testar
+
+LANGUAGE_CODE -> Alterar para 'pt-br'
+
+Views :
+
+Estão nas aplicações. Lá nós criamos funções que recebem requests e retornamos a renderização html.
+Criamos duas defs para exemplo : index e contato.
+
+Porém não foi criado nenhuma rota para dar acesso a essas views e isso é feito no arquivo urls.
+
+ 

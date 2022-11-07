@@ -14,7 +14,3 @@ django-admin startapp "nome_app"
 
 Cria-se uma nova pasta no diretório onde foi dado o comando ( Que deve ser o mesmo do projeto django criado anteriormente)
 Na pasta "nome_app" também são criados arquivos py , assim como no projeto, porém esse agora é o app.
-
-Na pasta migrations criamos histórico para o banco de dados.
-Quando criamos nosso app, devemos ir na pasta do *projeto* , em settings, e adicionar seu nome em INSTALLED APPPS.
-Ainda no projeto, em  TEMPLATES devemos adicionar no array DIR o nome 'templates' que será um arquivo criado no nosso app posteriormente

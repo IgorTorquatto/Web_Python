@@ -22,4 +22,58 @@ Criamos duas defs para exemplo : index e contato.
 
 Porém não foi criado nenhuma rota para dar acesso a essas views e isso é feito no arquivo urls.
 
- 
+
+Urls:
+
+Temos que importar os views do nosso app
+Logo no exemplo:
+Em urls.py
+
+from core.views import index,contato
+
+Sendo que index e contato foram as funções que fizemos para renderizar cada html.
+
+Em urlpatterns colocamos o path para nossas views
+Exemplo:
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',index),
+    path('contato',contato)
+]
+
+-Lembrar de deixar o debug em settings em "True"
+Perceba que foi criado o path para index e para contato.
+Porém ainda não temos templates html criados 
+
+Não é ideal criar todos os paths url no arquivo urls.py do projeto principal, porque considerando que vamos ter que fazer várias aplicações , colocar cada path de cada uma delas geraria algo enorme.
+
+Para organizar melhor escrevemos no arquivo urls.py do PROJETO:
+
+-importar o include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',include('core.urls')),
+]
+
+Na segunda linha de urlpatterns estamos definindo um path que será alocado posteriormente em core.urls que é onde fica nosso app.
+Sendo que na aplicação não há o arquivo urls, porém podemos criá-lo.
+
+
+Urls na Aplicação:
+
+Na aplicação core , exemplo , criamos o arquivo urls.py e nele :
+
+Escrevemos:
+
+from django.urls import path
+
+from .views import index, contato
+
+urlpatterns = [
+    path(' ',index),
+    path('contato',contato)
+]
+
+Ou seja, criamos cada path na prórpia aplicação.

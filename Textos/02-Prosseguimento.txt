@@ -77,3 +77,43 @@ urlpatterns = [
 ]
 
 Ou seja, criamos cada path na prórpia aplicação.
+
+Templates:
+
+Na nossa aplicação criamos uma pasta "templates"
+Dentro da pasta criamos os arquivos html.
+Como tínhamos criado como exemplo o index e o contato e já estavam configurados na nossa views.py do próprio app, vamos criar ambos agora nos templates do próprio app
+
+Nas urls do app temos que colocar o caminho para cada rota criada.
+
+
+urlpatterns = [
+    path('',index), #raiz (endereço principal) obs: Aspas sem espaço
+    path('contato',contato)
+]
+
+Lembrando que na urls do projeto já tínhamos dado o include em "core.urls" sendo que core é o nosso app e é justamente
+o código que está acima.
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',include('core.urls')),
+]
+
+Portanto, agora com os views e as urls configuradas e os templates criados , é só rodar o servidor e olhar a alteração em cada path.
+
+Recurso importante:
+
+Como nós sabemos, as views de cada app são em python, então podemos usar os recursos da linguagem para dentro dos nosso templates.
+Ex:Nas views vamos criar uma varíável "context" e dar um return nela da seguinte forma:
+
+def index (request):
+    context = {
+        'curso': 'Programação Web com Django'
+    }
+    return render(request,'index.html',context)
+
+No nosso template index , para usarmos essa variável :
+-Dupla chaves-:
+
+<p>{{curso}}</p>

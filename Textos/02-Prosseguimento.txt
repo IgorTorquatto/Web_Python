@@ -117,3 +117,63 @@ No nosso template index , para usarmos essa variável :
 -Dupla chaves-:
 
 <p>{{curso}}</p>
+
+
+Models dos Apps:
+
+Modelo de dados
+
+Exemplo: criamos um modelo de dados para representar um onjeto do tipo Produto com nome,preço e estoque
+Todos eles tem models específicos como : Char,Decimal e Integer.
+
+Ex:
+
+class Produto(models.Model):
+    nome = models.CharField('Nome',max_length=100)
+    preco = models.DecimalField('Preço',decimal_places=2,max_digits=8)
+    estoque = models.IntegerField('Quantidade em Estoque')
+
+
+Migrations:
+
+Estão dentro dos apps.
+
+Criar:
+comando -> python manage.py makemigrations
+
+Pega todos os modelos das aplicações existentes ,e adicionados em INSTALLED APPS em settings, e cria uma migration para cada app.
+
+O que são as migrations?
+Migrations é basicamente uma forma de versionar o seu banco de dados.
+
+Ou seja o django já cria um banco de dados para nós.
+
+Por padrão, sqllite3 está em settings do projeto, em DATABASES.
+
+Quando rodamos o comando "python manage.py makemigrations" cria-se um arquivo "initial" em migrations.
+Esse arquivo serve para gerenciar as alterações do banco de dados.
+
+
+Executar:
+
+comando -> python manage.py migrate
+
+Db Browser:
+
+No app DB browser do Sql lite3 abrimos a pasta do nosso projeto, e terá um arquivo "db.sqlite3"
+Nele podemos ver que em "core_produto" temos um banco de dados para a migration que criamos.
+Porém não cadastramos nenhum dado ainda.
+
+
+Migrations:
+
+Vamos criar uma nova:
+
+Migrations do app:
+
+class Clientes(models.Model):
+    nome = models.CharField("Nome", max_length = 100)
+    nome = models.CharField("Sobrenome", max_length = 100)
+    email = models.EmailField("E-mail",max_length = 100)
+
+Comando na pasta do projeto -> python manage.py makemigrations
